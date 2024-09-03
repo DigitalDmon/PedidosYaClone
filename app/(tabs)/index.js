@@ -1,7 +1,8 @@
 import {Text, View, StyleSheet, Pressable, TextInput, ScrollView} from "react-native";
 import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
-import {BellsIcon, DownIcon, FilterIcon, SearchIcon, UpIcon, ShoppingCartIcon} from "../../src/components/icons";
+import {BellsIcon, DownIcon, SearchIcon, UpIcon, ShoppingCartIcon} from "../../src/components/icons";
 import {useState} from "react";
+import Categories from "../../src/components/layout/Categories";
 
 /* THIS IS A NAVIGATION WITH LINKING ROUTES */
 const HomePage = () => {
@@ -34,28 +35,24 @@ const HomePage = () => {
                     </View>
                 </View>
 
-                {/* BODY */}
-                <ScrollView>
-                    {/* SEARCH INPUT */}
-                    <View className="px-8 py-2 flex-row justify-center items-center">
-                        {/* SEARCH ICON */}
-                        <SearchIcon />
-                        {/* INPUT TEXT */}
-                        <TextInput
-                            className="h-10 w-full p-2 ml-1 text-sm border rounded-2xl"
-                            placeholder="Restaurants, products, dishes"
-                            placeholderTextColor="#F52F41"
-                            keyboardType="default"
-                        >
-                        </TextInput>
-                        {/*<FilterIcon />*/}
-                    </View>
-
-                    {/* CATEGORIES */}
-                    <View>
-
-                    </View>
-                </ScrollView>
+                {/* SEARCH INPUT */}
+                <View className="px-8 py-2 flex-row justify-center items-center">
+                    {/* SEARCH ICON */}
+                    <SearchIcon />
+                    {/* INPUT TEXT */}
+                    <TextInput
+                        className="h-10 w-full p-2 ml-1 text-sm border rounded-2xl"
+                        placeholder="Restaurants, products, dishes"
+                        placeholderTextColor="#F52F41"
+                        keyboardType="default"
+                    >
+                    </TextInput>
+                    {/*<FilterIcon />*/}
+                </View>
+                {/* CATEGORIES */}
+                <View className="px-6 py-2">
+                    <Categories />
+                </View>
 
             </SafeAreaView>
         </SafeAreaProvider>
