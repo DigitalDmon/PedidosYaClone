@@ -2,11 +2,12 @@ import {Stack} from "expo-router";
 
 /* APP MAIN LAYOUT */
 const RootLayout = () => {
+
     return (
-        <Stack>
-            <Stack.Screen name="(tabs)" options={{
-                headerShown: false
-            }}/>
+        /* STACK IS THE HEADER ON THE APP */
+        <Stack screenOptions={{
+            headerShown: false,
+        }}>
         </Stack>
     )
 }
