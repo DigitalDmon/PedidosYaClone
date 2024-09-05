@@ -1,8 +1,9 @@
-import {Text, View, StyleSheet, Pressable, TextInput, ScrollView} from "react-native";
-import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
+import {Text, View, Pressable, TextInput, ScrollView} from "react-native";
+import {SafeAreaProvider, SafeAreaView, useSafeAreaInsets} from "react-native-safe-area-context";
 import {BellsIcon, DownIcon, SearchIcon, UpIcon, ShoppingCartIcon} from "../../src/components/icons";
 import {useState} from "react";
 import Categories from "../../src/components/layout/Categories";
+import FeaturedRow from "../../src/components/layout/FeaturedRow";
 
 /* THIS IS A NAVIGATION WITH LINKING ROUTES */
 const HomePage = () => {
@@ -13,15 +14,17 @@ const HomePage = () => {
         setIsDown(!isDown);
     }
 
+    const insets = useSafeAreaInsets();
+
     return (
         <SafeAreaProvider>
             <SafeAreaView>
 
                 {/* HEADER */}
-                <View className="flex-row justify-between px-5">
+                <View className="flex-row justify-between px-4">
                     {/* LOCATION SECTION */}
                     <Pressable onPress={handlePress} className="flex-row items-center">
-                        <Text className="text-base p-1">Current Location</Text>
+                        <Text className="text-base">Current Location</Text>
                         {isDown ? <DownIcon /> : <UpIcon />}
                     </Pressable>
                     {/* SHOPPING CART AND NOTIFICATION SECTION */}
@@ -36,23 +39,49 @@ const HomePage = () => {
                 </View>
 
                 {/* SEARCH INPUT */}
-                <View className="px-8 py-2 flex-row justify-center items-center">
+                <View className="px-6 pt-4 flex-row justify-center items-center">
                     {/* SEARCH ICON */}
                     <SearchIcon />
                     {/* INPUT TEXT */}
                     <TextInput
-                        className="h-10 w-full p-2 ml-1 text-sm border rounded-2xl"
+                        className="h-10 w-full p-4 ml-1 text-sm border rounded-2xl"
                         placeholder="Restaurants, products, dishes"
                         placeholderTextColor="#F52F41"
                         keyboardType="default"
                     >
                     </TextInput>
-                    {/*<FilterIcon />*/}
                 </View>
-                {/* CATEGORIES */}
-                <View className="px-6 py-2">
-                    <Categories />
-                </View>
+
+                {/* BODY  */}
+                <ScrollView>
+                    {/* CATEGORIES */}
+                    <View>
+                        <Categories />
+                    </View>
+
+                    {/* FEATURED ROWS */}
+                    <View>
+                        <FeaturedRow
+                            /* PROPS */
+                            id="123"
+                            title="Featured"
+                            description="Paid placements from our partnerts"
+                        />
+                        <FeaturedRow
+                            /* PROPS */
+                            id="1234"
+                            title="Tasty Discounts"
+                            description="Everyone's been enjoying these juicy discounts!"
+                        />
+                        <FeaturedRow
+                            /* PROPS */
+                            id="12345"
+                            title="Offers near you!"
+                            description="Why not support your local restaurant tonight!"
+                        />
+                    </View>
+
+                </ScrollView>
 
             </SafeAreaView>
         </SafeAreaProvider>
@@ -60,10 +89,3 @@ const HomePage = () => {
 }
 
 export default HomePage;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-    }
-})

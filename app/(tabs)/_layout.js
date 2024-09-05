@@ -1,5 +1,5 @@
 import {Tabs} from "expo-router";
-import {DownIcon, HomeIcon, OrdersIcon, PromotionsIcon, UserProfile} from "../../src/components/icons";
+import {HomeIcon, OrdersIcon, PromotionsIcon, UserProfile} from "../../src/components/icons";
 
 /* THIS IS A NAVIGATION AT THE BOTTOM OF THE PHONE SCREEN */
 const TabsLayout = () => {
@@ -8,7 +8,7 @@ const TabsLayout = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: {
-                    backgroundColor: '#CBD5E1',
+                    backgroundColor: 'transparent',
                 },
                 tabBarActiveTintColor: '#F52F41',
             }}
