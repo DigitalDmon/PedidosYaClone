@@ -15,6 +15,6 @@ const CategoryCard = ({imgUrl, title}) => {
 export default CategoryCard;
 
 const styles = StyleSheet.create({
-    image: {width: 100, height: 100, margin: 2, resizeMode: 'cover', borderRadius: 10},
+    image: {width: 75, height: 75, margin: 2, resizeMode: 'cover', borderRadius: 10},
     text: {color: '#F52F41', fontSize: 16, alignSelf: 'center'},
 })

@@ -17,16 +17,18 @@ const HomePage = () => {
     const insets = useSafeAreaInsets();
 
     return (
-        <SafeAreaProvider>
+        <SafeAreaProvider style={{paddingBottom: 80}}>
             <SafeAreaView>
 
                 {/* HEADER */}
                 <View className="flex-row justify-between px-4">
+
                     {/* LOCATION SECTION */}
                     <Pressable onPress={handlePress} className="flex-row items-center">
                         <Text className="text-base">Current Location</Text>
                         {isDown ? <DownIcon /> : <UpIcon />}
                     </Pressable>
+
                     {/* SHOPPING CART AND NOTIFICATION SECTION */}
                     <View className="flex-row">
                         <View className="mr-3">
@@ -40,8 +42,10 @@ const HomePage = () => {
 
                 {/* SEARCH INPUT */}
                 <View className="px-6 pt-4 flex-row justify-center items-center">
+
                     {/* SEARCH ICON */}
                     <SearchIcon />
+
                     {/* INPUT TEXT */}
                     <TextInput
                         className="h-10 w-full p-4 ml-1 text-sm border rounded-2xl"
@@ -53,14 +57,15 @@ const HomePage = () => {
                 </View>
 
                 {/* BODY  */}
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
+
                     {/* CATEGORIES */}
                     <View>
                         <Categories />
                     </View>
 
                     {/* FEATURED ROWS */}
-                    <View>
+                    <View className="pb-2">
                         <FeaturedRow
                             /* PROPS */
                             id="123"

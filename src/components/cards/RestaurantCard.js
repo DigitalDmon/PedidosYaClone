@@ -15,12 +15,12 @@ const RestaurantCard = ({
     lat
 }) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity className="bg-white mr-3 shadow rounded-t-lg">
             <Image
                 source={{
                     uri: imgUrl,
                 }}
-                className="h-36 w-64 rounded-md"
+                className="h-36 w-64 rounded-t-lg"
             />
             <View className="p-4">
                 <Text className="font-bold pb-2">{title}</Text>
@@ -31,7 +31,7 @@ const RestaurantCard = ({
                 </View>
                 <View className="flex-row items-center space-x-1">
                     <LocationIcon />
-                    <Text className="text-sm text-black">{address}</Text>
+                    <Text className="text-sm text-black">Nearby · {address}</Text>
                 </View>
             </View>
         </TouchableOpacity>
