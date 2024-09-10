@@ -1,27 +1,37 @@
-import {ScrollView} from "react-native";
-import CategoryCard from "../cards/CategoryCard";
+import {ScrollView} from 'react-native'
+import CategoryCard from '../cards/CategoryCard'
+import {useEffect, useState} from 'react'
+import client, {urlFor} from '../../../sanity'
+import id from '../../../app/(tabs)/profile/[id]'
 
-const imgLink = "https://links.papareact.com/gn7"
+const imgLink = 'https://links.papareact.com/gn7'
 
 const Categories = () => {
-    return (
-        <ScrollView
-            contentContainerStyle={{
-                paddingHorizontal: 4,
-                paddingTop: 10
-            }}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-        >
-            {/* CATEGORY CARDS */}
-            <CategoryCard imgUrl={imgLink} title="Testing 1"/>
-            <CategoryCard imgUrl={imgLink} title="Testing 2" />
-            <CategoryCard imgUrl={imgLink} title="Testing 3" />
-            <CategoryCard imgUrl={imgLink} title="Testing 4"/>
-            <CategoryCard imgUrl={imgLink} title="Testing 5" />
-            <CategoryCard imgUrl={imgLink} title="Testing 6" />
-        </ScrollView>
-    )
+
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    client.fetch(`*[_type == "category"]`)
+      .then((data) => {
+        setCategories(data)
+      })
+  }, [])
+
+  return (
+    <ScrollView
+      contentContainerStyle={{
+        paddingHorizontal: 4,
+        paddingTop: 10
+      }}
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+    >
+      {/* CATEGORY CARDS */}
+      {categories?.map((category) => (
+        <CategoryCard key={category._id} imgUrl={urlFor(category.image).url()} title={category.name} />
+      ))}
+    </ScrollView>
+  )
 }
 
-export default Categories;
+export default Categories
