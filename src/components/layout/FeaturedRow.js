@@ -42,15 +42,16 @@ const FeaturedRow = ({id, title, description}) => {
           <RestaurantCard
             key={restaurant._id}
             id={restaurant._id}
-            imgUrl={restaurant.image}
+            imageLogo={restaurant.image_logo}
+            imagePresentation={restaurant.image_presentation}
             title={restaurant.name}
             rating={restaurant.rating}
-            genre={restaurant.type?.genre}
-            address={restaurant.address.slice(0,40) + " ..."}
-            short_description={restaurant.short_description}
-            dishes={restaurant.dishes}
+            genre={restaurant.type?.name}
+            address={restaurant.address}
+            /*short_description={restaurant.short_description}*/
+            /*dishes={restaurant.dishes}*/
             /*long={20}*/
-            lat={restaurant.lat}
+            /*lat={restaurant.lat}*/
           />
         ))}
 

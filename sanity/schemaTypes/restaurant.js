@@ -18,14 +18,24 @@ export default defineType({
             validation: (Rule) => Rule.max(200),
         },
         {
-            name: 'image',
+            name: 'image_presentation',
             type: 'image',
-            title: 'Image of the Restaurant',
+            title: 'Image presentation of the Restaurant'
         },
         {
-            name: 'lat',
+            name: 'image_logo',
+            type: 'image',
+            title: 'Image Logo of the Restaurant'
+        },
+        {
+            name: 'latitude',
             type: 'number',
             title: 'Latitude of the Restaurant',
+        },
+        {
+            name: 'longitude',
+            type: 'number',
+            title: 'Longitude of the Restaurant'
         },
         {
             name: 'address',
