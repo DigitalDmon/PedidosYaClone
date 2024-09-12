@@ -6,7 +6,7 @@ import client from '../../../sanity'
 
 const imgLink = 'https://links.papareact.com/gn7'
 
-const FeaturedRow = ({id, title, description}) => {
+export default function FeaturedRow({id, title, description}) {
 
   const [restaurants, setRestaurants] = useState([])
 
@@ -17,24 +17,24 @@ const FeaturedRow = ({id, title, description}) => {
       })
   }, [])
 
-  console.log(restaurants)
+  //console.log(restaurants)
 
   return (
     /* SPECIAL CARDS */
-    <View className="px-4">
+    <View>
 
       {/* HEADER CARDS */}
-      <View className="mt-4 flex-row items-center justify-between">
+      <View className="mt-4 ml-3 flex-row items-center justify-between">
         <Text className="font-bold text-2xl">{title}</Text>
         <ArrowRightIcon />
       </View>
-      <Text className="text-xs text-gray-500">{description}</Text>
+      <Text className="ml-3 text-xs text-gray-500">{description}</Text>
 
       {/* HORIZONTAL SCROLL CARDS */}
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{}}
+        contentContainerStyle={{paddingHorizontal: 12}}
         className="pt-4"
       >
         {/* RESTAURANTS FROM SANITY */}
@@ -60,5 +60,3 @@ const FeaturedRow = ({id, title, description}) => {
     </View>
   )
 }
-
-export default FeaturedRow

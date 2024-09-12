@@ -2,7 +2,7 @@ import {Image, Text, TouchableOpacity, View} from 'react-native'
 import {LocationIcon, StarIcon} from '../icons'
 import {urlFor} from '../../../sanity.js'
 
-const RestaurantCard = ({
+export default function RestaurantCard({
                           id,
                           imageLogo,
                           imagePresentation,
@@ -14,7 +14,7 @@ const RestaurantCard = ({
                           dishes,
                           longitude,
                           latitude
-                        }) => {
+                                       }) {
   return (
     <TouchableOpacity className="w-80 bg-white mr-3 shadow rounded-t-lg">
       <Image
@@ -42,5 +42,3 @@ const RestaurantCard = ({
     </TouchableOpacity>
   )
 }
-
-export default RestaurantCard

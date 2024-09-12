@@ -2,11 +2,10 @@ import {ScrollView} from 'react-native'
 import CategoryCard from '../cards/CategoryCard'
 import {useEffect, useState} from 'react'
 import client, {urlFor} from '../../../sanity'
-import id from '../../../app/(tabs)/profile/[id]'
 
 const imgLink = 'https://links.papareact.com/gn7'
 
-const Categories = () => {
+export default function Categories() {
 
   const [categories, setCategories] = useState([])
 
@@ -19,10 +18,7 @@ const Categories = () => {
 
   return (
     <ScrollView
-      contentContainerStyle={{
-        paddingHorizontal: 4,
-        paddingTop: 10
-      }}
+      contentContainerStyle={{}}
       horizontal={true}
       showsHorizontalScrollIndicator={false}
     >
@@ -33,5 +29,3 @@ const Categories = () => {
     </ScrollView>
   )
 }
-
-export default Categories
