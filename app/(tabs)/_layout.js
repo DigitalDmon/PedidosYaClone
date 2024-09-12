@@ -1,8 +1,8 @@
-import {Tabs} from "expo-router";
-import {HomeIcon, OrdersIcon, PromotionsIcon, UserProfile} from "../../src/components/icons";
+import {Tabs} from 'expo-router'
+import {HomeIcon, OrdersIcon, PromotionsIcon, UserProfile} from '../../src/components/icons'
 
 /* THIS IS A NAVIGATION AT THE BOTTOM OF THE PHONE SCREEN */
-const TabsLayout = () => {
+export default function TabsLayout() {
     return (
         <Tabs
             screenOptions={{
@@ -44,5 +44,3 @@ const TabsLayout = () => {
         </Tabs>
     )
 }
-
-export default TabsLayout;

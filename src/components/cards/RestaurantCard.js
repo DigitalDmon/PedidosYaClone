@@ -1,22 +1,27 @@
-import {Image, Text, TouchableOpacity, View} from 'react-native'
+import {Image, Pressable, Text, View} from 'react-native'
 import {LocationIcon, StarIcon} from '../icons'
 import {urlFor} from '../../../sanity.js'
+import {styled} from 'nativewind'
+import {Link} from 'expo-router'
+
+const StyledPressable = styled(Pressable)
 
 export default function RestaurantCard({
-                          id,
-                          imageLogo,
-                          imagePresentation,
-                          title,
-                          rating,
-                          genre,
-                          address,
-                          short_description,
-                          dishes,
-                          longitude,
-                          latitude
+                                         id,
+                                         imageLogo,
+                                         imagePresentation,
+                                         title,
+                                         rating,
+                                         genre,
+                                         address,
+                                         short_description,
+                                         dishes,
+                                         longitude,
+                                         latitude
                                        }) {
   return (
-    <TouchableOpacity className="w-80 bg-white mr-3 shadow rounded-t-lg">
+    <Link href={`/${title}`} asChild>
+      <StyledPressable className="w-80 bg-white mr-3 shadow rounded-t-lg active:opacity-70 active:border-b-red-100">
       <Image
         source={{uri: urlFor(imagePresentation).url()}}
         className="h-40 rounded-t-lg"
@@ -39,6 +44,7 @@ export default function RestaurantCard({
           <Text className="text-base text-black">Nearby · {address.slice(0, 35) + '...'}</Text>
         </View>
       </View>
-    </TouchableOpacity>
+      </StyledPressable>
+    </Link>
   )
 }
