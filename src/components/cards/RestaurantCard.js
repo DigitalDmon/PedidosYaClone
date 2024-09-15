@@ -13,11 +13,7 @@ export default function RestaurantCard({
                                          title,
                                          rating,
                                          genre,
-                                         address,
-                                         short_description,
-                                         dishes,
-                                         longitude,
-                                         latitude
+                                         address
                                        }) {
   return (
     <Link href={`/${id}`} asChild>

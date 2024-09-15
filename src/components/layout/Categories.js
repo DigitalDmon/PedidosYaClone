@@ -3,8 +3,6 @@ import CategoryCard from '../cards/CategoryCard'
 import {useEffect, useState} from 'react'
 import client, {urlFor} from '../../../sanity'
 
-const imgLink = 'https://links.papareact.com/gn7'
-
 export default function Categories() {
 
   const [categories, setCategories] = useState([])
