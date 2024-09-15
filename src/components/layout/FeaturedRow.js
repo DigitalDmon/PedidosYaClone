@@ -23,7 +23,7 @@ export default function FeaturedRow({id, title, description}) {
         contentContainerStyle={{paddingHorizontal: 12}}
         className="pt-4"
       >
-        {restaurants?.map(restaurant => (
+        {restaurants.map(restaurant => (
           <RestaurantCard
             key={restaurant._id}
             id={restaurant._id}

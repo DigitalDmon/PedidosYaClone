@@ -20,7 +20,7 @@ export default function RestaurantCard({
                                          latitude
                                        }) {
   return (
-    <Link href={`/${title}`} asChild>
+    <Link href={`/${id}`} asChild>
       <StyledPressable className="w-80 bg-white mr-3 shadow rounded-t-lg active:opacity-70 active:border-b-red-100">
       <Image
         source={{uri: urlFor(imagePresentation).url()}}

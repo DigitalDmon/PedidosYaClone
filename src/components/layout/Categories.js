@@ -18,7 +18,7 @@ export default function Categories() {
 
   return (
     <ScrollView
-      contentContainerStyle={{}}
+      contentContainerStyle={{paddingRight: 12}}
       horizontal={true}
       showsHorizontalScrollIndicator={false}
     >

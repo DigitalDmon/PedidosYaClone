@@ -10,13 +10,11 @@ export default function useFetchRestaurants(id) {
       client.fetch(
         `*[_type == "featured" && _id == $id] {..., restaurants[] -> {..., dishes[] -> , type -> {name}}}[0]`,
         {id}
-      )
-        .then(data => {
-          setRestaurants(data?.restaurants || [])
-        })
-        .catch(error => console.error(error))
+      ).then((data) => {
+        setRestaurants(data?.restaurants)
+      })
     }
-  }, [id])
+  }, [])
 
   return restaurants
 
